@@ -1,0 +1,125 @@
+/* Navbar.css */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+.navbar {
+    background-color: #3498db;
+    /* Blue color */
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.menu-icon {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 6px 0;
+    transition: transform 0.3s ease-in-out;
+}
+
+.menu-icon.open .bar:nth-child(1) {
+    transform: translateY(9px) rotate(-45deg);
+}
+
+.menu-icon.open .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-icon.open .bar:nth-child(3) {
+    transform: translateY(-9px) rotate(45deg);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-links a:hover {
+    color: #ecf0f1;
+    /* Lighter shade of blue on hover */
+}
+
+/* Mobile Menu Styles */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        width: 200px;
+        height: 250px;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        background-color: #3498db;
+        border-radius: 20px;
+        /* Blue color */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .menu-icon.open+.nav-links {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 0;
+        text-align: left;
+        padding: 15px;
+    }
+
+    .overlay {
+        display: none;
+    }
+}
+
+
+.navbar-link:hover {
+    text-decoration: underline;
+  }
+  
+  /* Style the active link */
+  .navbar-link.active {
+    font-weight: bold;
+  }
